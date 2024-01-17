@@ -17,6 +17,7 @@ class NationalPark:
     # in visitiros() list which contains all visitors that visited particular
     #park, 
     def visitors(self):
+        print([trip.visitor for trip in self.trips()])
         return list(set([trip.visitor for trip in self.trips()]))
     
     def total_visits(self):
@@ -109,7 +110,7 @@ park2 = NationalPark('central park')
 visitor1 = Visitor('tyler')
 visitor2 = Visitor('John')
 visitor3 = Visitor('Jamie')
-trip1 = Trip(visitor1, park2, "September 1st", "September 3rd" )
+trip1 = Trip(visitor1, park1, "September 1st", "September 3rd" )
 trip3 = Trip(visitor1, park2, "September 1st", "September 3rd" )
 trip5 = Trip(visitor1, park1, "September 1st", "September 3rd" )
 trip4 = Trip(visitor1, park2, "September 1st", "September 3rd" )
@@ -119,4 +120,3 @@ trip6 = Trip(visitor2, park1, "December 4t", "January 16th" )
 # print(park1, park2, visitor1, trip2)
 visitor1.name = 'Tyler Kim'
 # ipdb.set_trace()
-print(NationalPark.most_visited().name)
